@@ -7,6 +7,7 @@ public class LeseThread implements Runnable {
 	static int length = 256;
 	ServerSocket socket;
 
+	//Konstuktor des LeseThread für den Input per Tastatur zur Serverbedienung
 	LeseThread(ServerSocket welcomeSocket) {
 		this.socket = welcomeSocket;
 		Thread t = new Thread(this, "Lesen");
@@ -15,15 +16,17 @@ public class LeseThread implements Runnable {
 
 	@Override
 	public void run() {
-
+		//Scanner Start für Tastatureingabe Server
 		Scanner tastaturEingabe = new Scanner(System.in);
 		while (true) {
 			String Eingabe = tastaturEingabe.nextLine();
+			//Bei Eingabe "Liste" wird die Liste der aktiven Clients ausgegeben
 			if (Eingabe.equals("Liste")) {
 				Pong.showListe();
 				;
 				Thread.currentThread().interrupt();
 			}
+			//Bei Eingabe "Ende" wird Programm beendet
 			if (Eingabe.equals("Ende")) {
 				System.out.println("Ende");
 				tastaturEingabe.close();
