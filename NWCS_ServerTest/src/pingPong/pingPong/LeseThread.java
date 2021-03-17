@@ -1,6 +1,6 @@
 package pingPong;
 
-//Test FB
+//Test crate_active
 
 import java.net.ServerSocket;
 import java.util.Scanner;
