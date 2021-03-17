@@ -15,7 +15,7 @@ public class LeseThread implements Runnable {
 		Thread t = new Thread(this, "Lesen");
 		t.start();
 	}
-
+//TestBR
 	@Override
 	public void run() {
 		//Scanner Start f�r Tastatureingabe Server
