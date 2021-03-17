@@ -13,8 +13,8 @@ public class LeseThread implements Runnable {
 		Thread t = new Thread(this, "Lesen");
 		t.start();
 	}
-
-//testBR
+//test
+//test
 
 	@Override
 	public void run() {
