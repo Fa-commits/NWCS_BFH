@@ -26,9 +26,6 @@ public class LeseThread implements Runnable {
 				Thread.currentThread().interrupt();
 			}
 
-			if(Eingabe.equals("Start")){
-				
-			}
 			//Bei Eingabe "Ende" wird Programm beendet
 			if (Eingabe.equals("Ende")) {
 				System.out.println("Der Server wird abgeschalten");
