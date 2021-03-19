@@ -6,17 +6,15 @@ import java.util.*;
 
 //////////////////////////////
 //							//
-//	06-MAR-2009/lar1@SWS	//
 //	Ping-Pong-Server		//
 //							//
 //////////////////////////////
 
 class Pong {
-
-	static boolean dead = false;
+	
 	static Vector<Serializable> clients = new Vector<Serializable>();
 
-	//Hinzufügen von Clients im Speicher
+	//Hinzufï¿½gen von Clients im Speicher
 	public static void addToVector(String string) {
 		clients.add(string);
 	}
@@ -26,10 +24,6 @@ class Pong {
 		clients.remove(string);
 	}
 
-	//Beenden des gesamten Programms
-	public static void setDead() {
-		System.exit(0);
-	}
 
 	//Anzeige der Liste aller verbundenen Clients
 	public static void showListe() {
@@ -54,7 +48,7 @@ class Pong {
 			// Verbindung aufbauen
 			System.out.println("Warten auf neue Verbindung");
 			Socket connectionSocket = welcomeSocket.accept();
-			System.out.println("Verbindung aufgebaut und an PongThread übergeben.");
+			System.out.println("Verbindung aufgebaut und an PongThread ï¿½bergeben.");
 			PongThread thread = new PongThread(connectionSocket);
 			thread.start();
 

@@ -1,7 +1,5 @@
 package pingPong;
 
-//Test crate_active
-
 import java.net.ServerSocket;
 import java.util.Scanner;
 
@@ -15,7 +13,7 @@ public class LeseThread implements Runnable {
 		Thread t = new Thread(this, "Lesen");
 		t.start();
 	}
-//TestBR
+
 	@Override
 	public void run() {
 		//Scanner Start f�r Tastatureingabe Server
@@ -25,15 +23,17 @@ public class LeseThread implements Runnable {
 			//Bei Eingabe "Liste" wird die Liste der aktiven Clients ausgegeben
 			if (Eingabe.equals("Liste")) {
 				Pong.showListe();
-				;
 				Thread.currentThread().interrupt();
+			}
+
+			if(Eingabe.equals("Start")){
+				
 			}
 			//Bei Eingabe "Ende" wird Programm beendet
 			if (Eingabe.equals("Ende")) {
-				System.out.println("Ende");
+				System.out.println("Der Server wird abgeschalten");
 				tastaturEingabe.close();
-				Pong.setDead();
-				Thread.currentThread().interrupt();
+				System.exit(0);
 			}
 		}
 	}

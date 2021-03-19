@@ -6,7 +6,6 @@ import java.io.*;
 
 //////////////////////////////
 //							//
-//	06-MAR-2009/lar1@SWS	//
 //	Ping-Pong-Client		//
 //							//
 //////////////////////////////
@@ -48,7 +47,7 @@ class Ping {
 					sentence = inFromServer.readLine();
 					System.out.println("Antwort erhalten >" + sentence + "<");
 				}
-				System.out.println("Übermittlung abgeschlossen\nWarten auf neues Anweisung");
+				System.out.println("ï¿½bermittlung abgeschlossen\nWarten auf neues Anweisung");
 			}
 			if (text.equals("Ende")) {
 
