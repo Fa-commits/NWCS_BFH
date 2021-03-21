@@ -1,6 +1,7 @@
 package pingPong;
 
 import java.net.*;
+import java.nio.file.WatchService;
 import java.util.Scanner;
 import java.io.*;
 
@@ -27,8 +28,19 @@ class Ping {
 		PrintStream outToServer = new PrintStream(clientSocket.getOutputStream());
 		BufferedReader inFromServer = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
 
+
 		while (clientSocket.isConnected()) {
+			// String liste = inFromServer.readLine();
 			String text = tastaturEingabe.next();
+			
+			if(inFromServer.ready()==true){	
+				if(inFromServer.readLine().contentEquals("Liste")){
+				String listeInhalt = inFromServer.readLine();
+				System.out.println(listeInhalt);
+				System.out.println("Anzeige der Liste");
+				}
+			}
+
 			if (text.equals("Start")) {
 				outToServer.println(text);
 				outToServer.println(durchlauf);
@@ -47,7 +59,7 @@ class Ping {
 					sentence = inFromServer.readLine();
 					System.out.println("Antwort erhalten >" + sentence + "<");
 				}
-				System.out.println("�bermittlung abgeschlossen\nWarten auf neues Anweisung");
+				System.out.println("Uebermittlung abgeschlossen\nWarten auf neues Anweisung");
 			}
 			if (text.equals("Ende")) {
 
@@ -61,7 +73,22 @@ class Ping {
 			}
 			if (text.equals("Liste")) {
 				outToServer.println(text);
+
+				//Funktioniert nicht, ist die Annahme der Liste welche vom Server gesendet wurde.
+				// if(inFromServer.ready()==true){
+				// String listeInhalt = inFromServer.readLine();
+				// System.out.println(listeInhalt);
+				// System.out.println("Anzeige der Liste");
+				// }
 			}
+			//Gleich wie oben, ander Stelle, funktioniert auch nicht
+			// if(inFromServer.ready()==true){	
+			// 	if(inFromServer.readLine().contentEquals("Liste")){
+			// 	String listeInhalt = inFromServer.readLine();
+			// 	System.out.println(listeInhalt);
+			// 	System.out.println("Anzeige der Liste");
+			// 	}
+			// }
 		}
 	}
 }

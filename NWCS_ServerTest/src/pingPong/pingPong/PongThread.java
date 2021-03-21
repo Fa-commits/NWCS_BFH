@@ -54,7 +54,7 @@ public class PongThread extends Thread {
 						outToClient.println((i + 1 + ". PONG " + dt));
 						System.out.println(i + 1 + ". PONG " + dt + " gesendet.");
 					}
-					System.out.println("�bermittlung abgeschlossen\nWarten auf neues Datenpacket");
+					System.out.println("Uebermittlung abgeschlossen\nWarten auf neues Datenpacket");
 				}
 				if (rein.contentEquals("Ende")) {
 
@@ -71,7 +71,12 @@ public class PongThread extends Thread {
 				}
 				if (rein.contentEquals("Liste")) {
 					Pong.showListe();
-					;
+
+					// dieser Teil funktioniert noch nicht, die Liste sollte an den Client gesendet werden, der Empfang funktioniert noch nicht.
+					// outToClient.println("Liste");
+					// outToClient.flush();
+					// outToClient.println(Pong.getListe());
+					// outToClient.flush();
 				}
 			}
 		} catch (IOException | InterruptedException e) {
