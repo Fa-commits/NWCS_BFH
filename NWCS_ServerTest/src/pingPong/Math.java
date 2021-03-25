@@ -1,5 +1,3 @@
-import java.math.BigInteger;
-
 public class Math {
     public static void main(String argv[]){
         long a = 3462948672l;

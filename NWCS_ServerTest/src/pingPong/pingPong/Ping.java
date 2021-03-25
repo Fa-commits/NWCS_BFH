@@ -1,7 +1,6 @@
 package pingPong;
 
 import java.net.*;
-import java.nio.file.WatchService;
 import java.util.Scanner;
 import java.io.*;
 
@@ -59,7 +58,7 @@ class Ping {
 					sentence = inFromServer.readLine();
 					System.out.println("Antwort erhalten >" + sentence + "<");
 				}
-				System.out.println("Uebermittlung abgeschlossen\nWarten auf neues Anweisung");
+				System.out.println("Uebermittlung abgeschlossen\nWarten auf neue Anweisung");
 			}
 			if (text.equals("Ende")) {
 
@@ -81,7 +80,7 @@ class Ping {
 				// System.out.println("Anzeige der Liste");
 				// }
 			}
-			//Gleich wie oben, ander Stelle, funktioniert auch nicht
+			//Gleich wie oben, andere Stelle, funktioniert auch nicht
 			// if(inFromServer.ready()==true){	
 			// 	if(inFromServer.readLine().contentEquals("Liste")){
 			// 	String listeInhalt = inFromServer.readLine();

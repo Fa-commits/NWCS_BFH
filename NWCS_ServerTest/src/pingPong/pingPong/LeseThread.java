@@ -33,7 +33,7 @@ public class LeseThread implements Runnable {
 				System.exit(0);
 			}
 			else{
-				System.out.println("Eingabe war keine korrekte Anwisung");
+				System.out.println("Eingabe war keine korrekte Anweisung");
 			}
 		}
 	}
