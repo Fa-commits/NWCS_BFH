@@ -36,7 +36,7 @@ public class PongThread extends Thread {
 
 				if (rein.contentEquals("Start")) {
 					durchlauf = Integer.parseInt(inFromClient.readLine()); // holt sich den ersten Input des Clients und
-																			// definiert damit die Anzahl Durchl�ufe
+																			// definiert damit die Anzahl Durchläufe
 
 					for (int i = 0; i < durchlauf; i++) {
 						System.out.print("warte auf Daten, ");
@@ -60,8 +60,8 @@ public class PongThread extends Thread {
 
 					try {
 						Pong.removeFromVector(connectionSocket.toString());
-						Pong.showListe();
 						System.out.println("Verbindung abgebaut");
+						Pong.showListe();
 						connectionSocket.close();
 
 						Thread.currentThread().interrupt();
@@ -71,12 +71,6 @@ public class PongThread extends Thread {
 				}
 				if (rein.contentEquals("Liste")) {
 					Pong.showListe();
-
-					// dieser Teil funktioniert noch nicht, die Liste sollte an den Client gesendet werden, der Empfang funktioniert noch nicht.
-					// outToClient.println("Liste");
-					// outToClient.flush();
-					// outToClient.println(Pong.getListe());
-					// outToClient.flush();
 				}
 			}
 		} catch (IOException | InterruptedException e) {

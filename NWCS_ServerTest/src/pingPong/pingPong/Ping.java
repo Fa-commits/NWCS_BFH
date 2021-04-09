@@ -72,22 +72,7 @@ class Ping {
 			}
 			if (text.equals("Liste")) {
 				outToServer.println(text);
-
-				//Funktioniert nicht, ist die Annahme der Liste welche vom Server gesendet wurde.
-				// if(inFromServer.ready()==true){
-				// String listeInhalt = inFromServer.readLine();
-				// System.out.println(listeInhalt);
-				// System.out.println("Anzeige der Liste");
-				// }
 			}
-			//Gleich wie oben, andere Stelle, funktioniert auch nicht
-			// if(inFromServer.ready()==true){	
-			// 	if(inFromServer.readLine().contentEquals("Liste")){
-			// 	String listeInhalt = inFromServer.readLine();
-			// 	System.out.println(listeInhalt);
-			// 	System.out.println("Anzeige der Liste");
-			// 	}
-			// }
 		}
 	}
 }

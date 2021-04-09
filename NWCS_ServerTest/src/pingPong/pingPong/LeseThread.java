@@ -8,7 +8,7 @@ public class LeseThread implements Runnable {
 	ServerSocket socket;
 
 	//Konstuktor des LeseThread fuer den Input per Tastatur zur Serverbedienung
-	LeseThread(ServerSocket welcomeSocket) {
+	public LeseThread(ServerSocket welcomeSocket) {
 		this.socket = welcomeSocket;
 		Thread t = new Thread(this, "Lesen");
 		t.start();
