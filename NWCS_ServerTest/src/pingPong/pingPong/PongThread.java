@@ -36,7 +36,7 @@ public class PongThread extends Thread {
 
 				if (rein.contentEquals("Start")) {
 					durchlauf = Integer.parseInt(inFromClient.readLine()); // holt sich den ersten Input des Clients und
-																			// definiert damit die Anzahl Durchl�ufe
+																			// definiert damit die Anzahl Durchläufe
 
 					for (int i = 0; i < durchlauf; i++) {
 						System.out.print("warte auf Daten, ");
@@ -54,14 +54,14 @@ public class PongThread extends Thread {
 						outToClient.println((i + 1 + ". PONG " + dt));
 						System.out.println(i + 1 + ". PONG " + dt + " gesendet.");
 					}
-					System.out.println("�bermittlung abgeschlossen\nWarten auf neues Datenpacket");
+					System.out.println("Uebermittlung abgeschlossen\nWarten auf neues Datenpacket");
 				}
 				if (rein.contentEquals("Ende")) {
 
 					try {
 						Pong.removeFromVector(connectionSocket.toString());
-						Pong.showListe();
 						System.out.println("Verbindung abgebaut");
+						Pong.showListe();
 						connectionSocket.close();
 
 						Thread.currentThread().interrupt();
@@ -71,7 +71,6 @@ public class PongThread extends Thread {
 				}
 				if (rein.contentEquals("Liste")) {
 					Pong.showListe();
-					;
 				}
 			}
 		} catch (IOException | InterruptedException e) {

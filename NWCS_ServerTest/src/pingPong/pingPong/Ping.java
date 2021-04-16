@@ -27,8 +27,19 @@ class Ping {
 		PrintStream outToServer = new PrintStream(clientSocket.getOutputStream());
 		BufferedReader inFromServer = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
 
+
 		while (clientSocket.isConnected()) {
+			// String liste = inFromServer.readLine();
 			String text = tastaturEingabe.next();
+			
+			if(inFromServer.ready()==true){	
+				if(inFromServer.readLine().contentEquals("Liste")){
+				String listeInhalt = inFromServer.readLine();
+				System.out.println(listeInhalt);
+				System.out.println("Anzeige der Liste");
+				}
+			}
+
 			if (text.equals("Start")) {
 				outToServer.println(text);
 				outToServer.println(durchlauf);
@@ -47,7 +58,7 @@ class Ping {
 					sentence = inFromServer.readLine();
 					System.out.println("Antwort erhalten >" + sentence + "<");
 				}
-				System.out.println("�bermittlung abgeschlossen\nWarten auf neues Anweisung");
+				System.out.println("Uebermittlung abgeschlossen\nWarten auf neue Anweisung");
 			}
 			if (text.equals("Ende")) {
 

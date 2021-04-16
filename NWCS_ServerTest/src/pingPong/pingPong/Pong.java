@@ -14,7 +14,7 @@ class Pong {
 	
 	static Vector<Serializable> clients = new Vector<Serializable>();
 
-	//Hinzuf�gen von Clients im Speicher
+	//Hinzufuegen von Clients im Speicher
 	public static void addToVector(String string) {
 		clients.add(string);
 	}
@@ -28,6 +28,10 @@ class Pong {
 	//Anzeige der Liste aller verbundenen Clients
 	public static void showListe() {
 		System.out.println("Liste der verbundenen Clients:\n" + Pong.clients.toString());
+	}
+
+	public static String getListe() {
+		return Pong.clients.toString();
 	}
 
 	public static void main(String argv[]) throws Exception {
@@ -48,7 +52,7 @@ class Pong {
 			// Verbindung aufbauen
 			System.out.println("Warten auf neue Verbindung");
 			Socket connectionSocket = welcomeSocket.accept();
-			System.out.println("Verbindung aufgebaut und an PongThread �bergeben.");
+			System.out.println("Verbindung aufgebaut und an PongThread uebergeben.");
 			PongThread thread = new PongThread(connectionSocket);
 			thread.start();
 

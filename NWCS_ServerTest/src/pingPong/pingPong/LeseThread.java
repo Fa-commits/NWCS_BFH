@@ -7,8 +7,8 @@ public class LeseThread implements Runnable {
 	static int length = 256;
 	ServerSocket socket;
 
-	//Konstuktor des LeseThread f�r den Input per Tastatur zur Serverbedienung
-	LeseThread(ServerSocket welcomeSocket) {
+	//Konstuktor des LeseThread fuer den Input per Tastatur zur Serverbedienung
+	public LeseThread(ServerSocket welcomeSocket) {
 		this.socket = welcomeSocket;
 		Thread t = new Thread(this, "Lesen");
 		t.start();
@@ -16,7 +16,7 @@ public class LeseThread implements Runnable {
 
 	@Override
 	public void run() {
-		//Scanner Start f�r Tastatureingabe Server
+		//Scanner Start fuer Tastatureingabe Server
 		Scanner tastaturEingabe = new Scanner(System.in);
 		while (true) {
 			String Eingabe = tastaturEingabe.nextLine();
@@ -31,6 +31,9 @@ public class LeseThread implements Runnable {
 				System.out.println("Der Server wird abgeschalten");
 				tastaturEingabe.close();
 				System.exit(0);
+			}
+			else{
+				System.out.println("Eingabe war keine korrekte Anweisung");
 			}
 		}
 	}
