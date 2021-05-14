@@ -53,8 +53,7 @@ class Pong {
 			System.out.println("Warten auf neue Verbindung");
 			Socket connectionSocket = welcomeSocket.accept();
 			System.out.println("Verbindung aufgebaut und an PongThread uebergeben.");
-			PongThread thread = new PongThread(connectionSocket);
-			thread.start();
+			new PongThread(connectionSocket);
 
 		}
 
