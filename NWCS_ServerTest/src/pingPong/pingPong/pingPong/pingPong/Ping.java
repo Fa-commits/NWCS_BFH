@@ -30,13 +30,6 @@ class Ping {
 
 		while (clientSocket.isConnected()) {
 			String text = tastaturEingabe.next();
-			
-			if(inFromServer.ready()){	
-				String listeInhalt = inFromServer.readLine();
-				System.out.println(listeInhalt);
-				System.out.println("Anzeige der Liste");
-				
-			}
 
 			if (text.equals("Start")) {
 				System.out.println("Geben Sie die Anzahl Durchläufe ein:");

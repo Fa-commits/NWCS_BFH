@@ -30,10 +30,6 @@ class Pong {
 		System.out.println("Liste der verbundenen Clients:\n" + Pong.clients.toString());
 	}
 
-	public static String getListe() {
-		return Pong.clients.toString();
-	}
-
 	public static void main(String argv[]) throws Exception {
 		
 		ServerSocket welcomeSocket = new ServerSocket(5678);
