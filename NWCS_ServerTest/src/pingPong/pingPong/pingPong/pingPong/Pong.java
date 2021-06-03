@@ -30,10 +30,6 @@ class Pong {
 		System.out.println("Liste der verbundenen Clients:\n" + Pong.clients.toString());
 	}
 
-	public static String getListe() {
-		return Pong.clients.toString();
-	}
-
 	public static void main(String argv[]) throws Exception {
 		
 		ServerSocket welcomeSocket = new ServerSocket(5678);
@@ -53,8 +49,7 @@ class Pong {
 			System.out.println("Warten auf neue Verbindung");
 			Socket connectionSocket = welcomeSocket.accept();
 			System.out.println("Verbindung aufgebaut und an PongThread uebergeben.");
-			PongThread thread = new PongThread(connectionSocket);
-			thread.start();
+			new PongThread(connectionSocket);
 
 		}
 
